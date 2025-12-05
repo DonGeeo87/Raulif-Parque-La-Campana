@@ -25,11 +25,30 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 
   return (
     <div className={`fixed inset-0 z-[200] bg-black flex flex-col items-center justify-center transition-opacity duration-1000 ${fade ? 'opacity-0' : 'opacity-100'}`}>
-      <div className="relative mb-6">
-        {/* Abstract representation of the logo if image fails or while loading */}
+      <div className="relative mb-6 w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
+        {/* Glow effect behind logo */}
         <div className="absolute inset-0 bg-raulif-green blur-3xl opacity-20 animate-pulse-slow"></div>
-        {/* We use the Fingerprint icon as a placeholder for the SVG provided, styled to look like the brand */}
-        <Fingerprint size={80} className="text-white relative z-10 animate-pulse" strokeWidth={1} />
+        
+        {/* Logo Raulif con filtro para hacerlo visible en fondo negro */}
+        <img 
+          src="/logo-raulif.png" 
+          alt="Raulif Logo" 
+          className="w-full h-full object-contain filter brightness-0 invert drop-shadow-[0_0_20px_rgba(16,185,129,0.4)] relative z-10 animate-pulse"
+          onError={(e) => {
+            // Fallback al icono si el logo no carga
+            e.currentTarget.style.display = 'none';
+            const fallback = e.currentTarget.nextElementSibling;
+            if (fallback) fallback.style.display = 'block';
+          }}
+        />
+        
+        {/* Fallback icon si el logo no carga */}
+        <Fingerprint 
+          size={80} 
+          className="text-white relative z-10 animate-pulse hidden" 
+          strokeWidth={1} 
+        />
+        
         <div className="absolute -right-2 -top-2 w-4 h-4 bg-raulif-green rounded-full animate-ping"></div>
       </div>
       

@@ -12,14 +12,30 @@ export const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
       <div className="flex items-center gap-2 md:gap-3 group cursor-pointer" onClick={onLogoClick || (() => window.scrollTo(0, 0))}>
         {/* Logo Container */}
         <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
-            {/* Using a stylistic Icon to represent the logo provided in the prompt until the SVG file is locally hosted */}
-            <Fingerprint className="text-white group-hover:text-raulif-green transition-colors" size={28} strokeWidth={1.5} />
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-raulif-green rounded-full animate-pulse"></div>
+            {/* Logo Raulif con filtro para hacerlo visible en fondo negro */}
+            <img 
+              src="/logo-raulif.png" 
+              alt="Raulif Logo" 
+              className="w-full h-full object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 group-hover:drop-shadow-[0_0_8px_rgba(16,185,129,0.6)] transition-all duration-300"
+              onError={(e) => {
+                // Fallback al icono si el logo no carga
+                e.currentTarget.style.display = 'none';
+                const fallback = e.currentTarget.nextElementSibling;
+                if (fallback) fallback.style.display = 'block';
+              }}
+            />
+            {/* Fallback icon si el logo no carga */}
+            <Fingerprint 
+              className="text-white group-hover:text-raulif-green transition-colors hidden" 
+              size={28} 
+              strokeWidth={1.5} 
+            />
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-raulif-green rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity"></div>
         </div>
         
         {/* Text Logo */}
         <div className="flex flex-col">
-          <span className="text-xl md:text-2xl font-light tracking-wide text-white font-sans">Raulif</span>
+          <span className="text-xl md:text-2xl font-light tracking-wide text-white font-sans group-hover:text-raulif-green transition-colors">Raulif</span>
         </div>
       </div>
       

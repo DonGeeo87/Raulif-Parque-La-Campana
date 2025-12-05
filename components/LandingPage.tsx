@@ -14,9 +14,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onStartExperience }) =
         {/* Abstract/Nature Background */}
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1920&q=80" 
-            alt="Nature Background" 
+            src="/images/cover-la-campana.jpg" 
+            alt="Parque Nacional La Campana" 
             className="w-full h-full object-cover opacity-40"
+            onError={(e) => {
+              // Fallback a Unsplash si la imagen local no existe
+              e.currentTarget.src = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80";
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
         </div>
