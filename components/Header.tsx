@@ -10,11 +10,11 @@ export const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
   return (
     <header className="w-full py-3 md:py-4 px-4 md:px-8 flex justify-between items-center border-b border-white/10 bg-black/80 backdrop-blur-md sticky top-0 z-[100]">
       <div className="flex items-center gap-2 md:gap-3 group cursor-pointer" onClick={onLogoClick || (() => window.scrollTo(0, 0))}>
-        {/* Logo Container */}
-        <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+        {/* Logo Container - Más grande sin texto */}
+        <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
             {/* Logo Raulif con filtro para hacerlo visible en fondo negro */}
             <img 
-              src="/logo-raulif.png" 
+              src={`${import.meta.env.BASE_URL}logo-raulif.png`}
               alt="Raulif Logo" 
               className="w-full h-full object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 group-hover:drop-shadow-[0_0_8px_rgba(16,185,129,0.6)] transition-all duration-300"
               onError={(e) => {
@@ -27,15 +27,11 @@ export const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
             {/* Fallback icon si el logo no carga */}
             <Fingerprint 
               className="text-white group-hover:text-raulif-green transition-colors hidden" 
-              size={28} 
+              size={48} 
               strokeWidth={1.5} 
             />
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-raulif-green rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-        
-        {/* Text Logo */}
-        <div className="flex flex-col">
-          <span className="text-xl md:text-2xl font-light tracking-wide text-white font-sans group-hover:text-raulif-green transition-colors">Raulif</span>
+            {/* Punto verde parpadeando siempre visible */}
+            <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-raulif-green rounded-full animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]"></div>
         </div>
       </div>
       

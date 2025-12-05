@@ -49,10 +49,14 @@ export const Card: React.FC<CardProps> = ({ image, title, subtitle, description,
       className={`group relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden transition-all duration-500 transform hover:-translate-y-2 hover:bg-gray-900/60 ${borderColors[accentColor]}`}
       style={{ animationDelay: `${index * 100}ms` }}
     >
-      {/* Image Container */}
-      <div className="h-56 w-full overflow-hidden relative">
-        <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-90" />
+      {/* Image Container - Formato cuadrado con relleno automático */}
+      <div className="aspect-square w-full overflow-hidden relative bg-gray-950">
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
       </div>
 
       {/* Content */}

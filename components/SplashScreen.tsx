@@ -31,7 +31,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
         
         {/* Logo Raulif con filtro para hacerlo visible en fondo negro */}
         <img 
-          src="/logo-raulif.png" 
+          src={`${import.meta.env.BASE_URL}logo-raulif.png`}
           alt="Raulif Logo" 
           className="w-full h-full object-contain filter brightness-0 invert drop-shadow-[0_0_20px_rgba(16,185,129,0.4)] relative z-10 animate-pulse"
           onError={(e) => {

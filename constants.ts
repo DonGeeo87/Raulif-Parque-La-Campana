@@ -1,5 +1,6 @@
 
 import { Region, ConservationStatus } from './types';
+import { getImagePath } from './utils/paths';
 
 // We use the Region interface to represent the whole Park context
 // and the 'parks' array to represent the Sectors of La Campana.
@@ -11,7 +12,7 @@ export const LA_CAMPANA_DATA: Region = {
   description: "Ubicado en la Cordillera de la Costa de Chile central, el Parque Nacional La Campana es una Reserva de la Biosfera y un tesoro de biodiversidad. Destaca por proteger uno de los últimos bosques naturales de Palma Chilena.",
   // Image: View of La Campana mountain - Chilean mountain landscape
   // Usa imagen local si existe, sino fallback a Unsplash
-  coverImage: "/images/cover-la-campana.jpg", 
+  coverImage: getImagePath("cover-la-campana.jpg"), 
   parks: [
     {
       id: "granizo",
@@ -21,7 +22,7 @@ export const LA_CAMPANA_DATA: Region = {
       area: "Zona de Cumbre",
       foundedYear: 1967,
       // Image: Steep mountain path/rocky terrain characteristic of the ascent
-      imageUrl: "/images/sector-granizo.jpg" 
+      imageUrl: getImagePath("sector-granizo.jpg") 
     },
     {
       id: "cajon-grande",
@@ -31,7 +32,7 @@ export const LA_CAMPANA_DATA: Region = {
       area: "Zona Precordillerana",
       foundedYear: 1967,
       // Image: Oak forest/Green stream area
-      imageUrl: "/images/sector-cajon-grande.jpg" 
+      imageUrl: getImagePath("sector-cajon-grande.jpg") 
     },
     {
       id: "ocoa",
@@ -41,7 +42,7 @@ export const LA_CAMPANA_DATA: Region = {
       area: "Valle de Ocoa",
       foundedYear: 1967,
       // Image: Specific view of Chilean Palms in the valley
-      imageUrl: "/images/sector-ocoa.jpg" 
+      imageUrl: getImagePath("sector-ocoa.jpg") 
     }
   ],
   flora: [
@@ -52,7 +53,7 @@ export const LA_CAMPANA_DATA: Region = {
       description: "La palmera más austral del mundo y emblema del parque. Puede vivir más de 1000 años y su tronco gris es inconfundible.",
       status: ConservationStatus.EN,
       // Image: Close up or clear shot of Jubaea chilensis - Chilean palm
-      imageUrl: "/images/palma-chilena.jpg" 
+      imageUrl: getImagePath("palma-chilena.jpg") 
     },
     {
       id: "roble",
@@ -61,7 +62,7 @@ export const LA_CAMPANA_DATA: Region = {
       description: "Árbol caducifolio que habita en las zonas altas y húmedas del parque. En otoño sus hojas se tornan rojas y naranjas.",
       status: ConservationStatus.VU,
       // Image: Nothofagus foliage/forest - Deciduous forest autumn
-      imageUrl: "/images/roble-santiago.jpg" 
+      imageUrl: getImagePath("roble-santiago.jpg") 
     },
     {
       id: "quillay",
@@ -70,7 +71,7 @@ export const LA_CAMPANA_DATA: Region = {
       description: "Árbol siempreverde endémico, fundamental para el bosque esclerófilo y la producción de miel.",
       status: ConservationStatus.LC,
       // Image: Sclerophyllous tree detail - Evergreen tree
-      imageUrl: "/images/quillay.jpg" 
+      imageUrl: getImagePath("quillay.jpg") 
     },
     {
       id: "chagual",
@@ -79,7 +80,7 @@ export const LA_CAMPANA_DATA: Region = {
       description: "Planta bromeliácea de grandes espigas con flores amarillas o verdes, hábitat de la mariposa del chagual.",
       status: ConservationStatus.LC,
       // Image: Puya chilensis (Spiky plant with flower stalk) - Bromeliad
-      imageUrl: "/images/chagual.jpg" 
+      imageUrl: getImagePath("chagual.jpg") 
     }
   ],
   fauna: [
@@ -91,7 +92,7 @@ export const LA_CAMPANA_DATA: Region = {
       description: "El cánido más grande de Chile. Es un depredador oportunista frecuente de avistar en los senderos.",
       status: ConservationStatus.LC,
       // Image: Fox - South American fox
-      imageUrl: "/images/zorro-culpeo.jpg" 
+      imageUrl: getImagePath("zorro-culpeo.jpg") 
     },
     {
       id: "turca",
@@ -101,7 +102,7 @@ export const LA_CAMPANA_DATA: Region = {
       description: "Ave endémica de Chile, caminadora y de canto potente y característico en las laderas rocosas.",
       status: ConservationStatus.LC,
       // Image: Brown bird on rock/ground (Representative) - Ground bird
-      imageUrl: "/images/turca.jpg" 
+      imageUrl: getImagePath("turca.jpg") 
     },
     {
       id: "tenca",
@@ -111,7 +112,7 @@ export const LA_CAMPANA_DATA: Region = {
       description: "Ave de plumaje gris y larga cola, conocida por su hermoso y variado canto.",
       status: ConservationStatus.LC,
       // Image: Grey mockingbird-like bird
-      imageUrl: "/images/tenca.jpg" 
+      imageUrl: getImagePath("tenca.jpg") 
     },
     {
       id: "aguilucho",
@@ -121,7 +122,7 @@ export const LA_CAMPANA_DATA: Region = {
       description: "Rapaz común en la zona, se le puede ver planeando sobre el valle buscando presas.",
       status: ConservationStatus.LC,
       // Image: Hawk/Bird of prey in flight
-      imageUrl: "/images/aguilucho.jpg" 
+      imageUrl: getImagePath("aguilucho.jpg") 
     },
     {
       id: "degu",
@@ -131,7 +132,7 @@ export const LA_CAMPANA_DATA: Region = {
       description: "Roedor endémico de cola con pincel, diurno y muy social, vive en galerías subterráneas.",
       status: ConservationStatus.LC,
       // Image: Small brown rodent - Degu
-      imageUrl: "/images/degu.jpg" 
+      imageUrl: getImagePath("degu.jpg") 
     }
   ]
 };
